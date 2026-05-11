@@ -3,7 +3,7 @@ main {
 }
 
 nav {
-    background-color: fixed;
+    background-color: #ddd;
     padding: 10px;
     display: block;
 }
@@ -34,7 +34,7 @@ main img {
     width: 150px;
     height: auto;
     border: #333;
-    padding: auto;
+    padding: 10px;
     box-shadow: 10px 10px 10px #000;
 }
 
