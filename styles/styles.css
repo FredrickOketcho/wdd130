@@ -2,6 +2,18 @@ main {
     max-width: 840px;
 }
 
+nav {
+    background-color: fixed;
+    padding: 10px;
+    display: block;
+}
+
+nav a {
+    color: 555;
+    padding: 10px;
+    display: block;
+}
+
 aside {
     width: 20rem;
     margin: 1rem;
@@ -23,7 +35,7 @@ main img {
     height: auto;
     border: #333;
     padding: auto;
-    box-shadow: #222;
+    box-shadow: 10px 10px 10px #000;
 }
 
 p {
@@ -34,12 +46,6 @@ footer {
     margin-top: 15px;
     border-top: 1px solid #000;
     text-align: center;
-}
-
-nav {
-    background-attachment: fixed;
-    padding: auto;
-    display: block;
 }
 
 h1 {
