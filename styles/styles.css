@@ -1,16 +1,25 @@
+:root {
+    --primary-color: #2a4d69;
+    --background-color: #f4f4f4;
+    --heading-font: Arial, sans-serif;
+    --padding: 1rem;
+    --border: 1px solid rgb(0 0 0/ 0.2);
+
+}
+
 main {
     max-width: 840px;
 }
 
 nav {
-    background-color: #ddd;
-    padding: 10px;
+    background-color: var(--background-color);
+    padding: var(--Padding);
     display: block;
 }
 
 nav a {
-    color: #555;
-    padding: 10px;
+    color: var(--primary-color);
+    padding: var(--Padding);
     display: block;
 }
 
@@ -18,9 +27,9 @@ aside {
     width: 20rem;
     margin: 1rem;
     border: 1px solid rgb(0 0 0/ 0.2);
-    padding: 1rem;
-    background-color: #eee;
-    color: #333;
+    padding: var(--Padding);
+    background-color: var(--background-color);
+    color: var(--primary-color);
     text-align: center;
 
 }
@@ -34,12 +43,12 @@ main img {
     width: 150px;
     height: auto;
     border: #333;
-    padding: 10px;
+    padding: var(--Padding);
     box-shadow: 10px 10px 10px #000;
 }
 
 p {
-    padding: 0;
+    padding: var(--Padding);
 }
 
 footer {
@@ -49,5 +58,5 @@ footer {
 }
 
 h1 {
-    color: #000;
+    color: var(--primary-color);
 }
