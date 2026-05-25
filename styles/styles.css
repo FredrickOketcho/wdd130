@@ -47,14 +47,15 @@ aside {
     grid-row: 1/2;
 }
 
-aside h2 {
-    position: absolute;
-    top: 47px;
-    left: 150px;
+aside .box h2 {
+    position: static;
+    margin-bottom: 0.5rem;
+    /* top: 47px; */
+    /* left: 150px; */
 }
 
-aside img {
-    width: 200px;
+aside .box img {
+    width: 100%;
     height: auto;
 
 }
@@ -110,7 +111,7 @@ h1 {
 
 .grid {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 20rem 1fr;
 
 }
 
