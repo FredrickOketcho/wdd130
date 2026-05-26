@@ -2,31 +2,17 @@
    CSS Variables
    ───────────────────────────────────────── */
 :root {
-    /* CONTRAST FIX 3: #1E88E5 on white = 3.68:1 (fail) → #1254A0 on white = 5.8:1 (pass) */
     --primary-color: #1254A0;
-
-    /* CONTRAST FIX 1: white on #00897B = 4.32:1 (fail) → white on #005F52 = 5.5:1 (pass) */
     --secondary-color: #005F52;
-
-    /* accent1 used as .hero h1 background — see h1 rule for the solid color fix */
     --accent1-color: #9C4A00;
-
     --accent2-color: #E9C46A;
-
     --light-text: #fff;
     --dark-text: #111;
-    /* CONTRAST FIX 4: body was inheriting accent1 #FB8C00 on white = 2.37:1 (fail).
-       body now explicitly uses #222 via --body-text */
-    --body-text: #222;
 
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
 }
 
-/* ─────────────────────────────────────────
-   Reset
-   ───────────────────────────────────────── */
-*,
 *::before,
 *::after {
     margin: 0;
@@ -34,12 +20,8 @@
     box-sizing: border-box;
 }
 
-/* ─────────────────────────────────────────
-   Base
-   ───────────────────────────────────────── */
 body {
     font-family: var(--body-font);
-    /* CONTRAST FIX 4: explicitly set body text to dark #222, not accent1 */
     color: var(--body-text);
 }
 
@@ -51,14 +33,10 @@ footer {
     padding: 0 20px;
 }
 
-/* ─────────────────────────────────────────
-   Header
-   ───────────────────────────────────────── */
 header {
     display: grid;
     grid-template-columns: 150px 1fr;
     align-items: center;
-    /* CONTRAST FIX 1: darkened secondary-color so white nav links pass AA */
     background-color: var(--secondary-color);
     padding: 15px 30px;
 }
@@ -67,9 +45,6 @@ header img {
     width: 100px;
 }
 
-/* ─────────────────────────────────────────
-   Navigation
-   ───────────────────────────────────────── */
 nav {
     display: flex;
     justify-content: flex-end;
@@ -78,7 +53,6 @@ nav {
 
 nav a {
     text-decoration: none;
-    /* white on --secondary-color #005F52 = 5.5:1 → passes AA */
     color: var(--light-text);
     font-size: 1rem;
     font-weight: bold;
@@ -86,19 +60,14 @@ nav a {
 }
 
 nav a:hover {
-    /* accent1 #9C4A00 background with white text = ~6.7:1 → passes AA */
     background-color: var(--accent1-color);
     color: var(--light-text);
     border-radius: 5px;
 }
 
-/* ─────────────────────────────────────────
-   Typography
-   ───────────────────────────────────────── */
 h1,
 h2 {
     font-family: var(--heading-font);
-    /* CONTRAST FIX 3: #1254A0 on white = 5.8:1 → passes AA */
     color: var(--primary-color);
 }
 
@@ -110,11 +79,7 @@ section {
     padding: 20px;
 }
 
-/* ─────────────────────────────────────────
-   Footer
-   ───────────────────────────────────────── */
 footer {
-    /* CONTRAST FIX 1: darkened secondary-color background */
     background-color: var(--secondary-color);
     color: var(--light-text);
     padding: 16px;
@@ -124,8 +89,6 @@ footer {
 }
 
 footer p {
-    /* CONTRAST FIX 5: was accent2 #E9C46A on #00897B = 2.58:1 (fail).
-       Now white on #005F52 = 5.5:1 (pass) */
     color: var(--light-text);
 }
 
@@ -142,9 +105,6 @@ footer p {
     width: 30px;
 }
 
-/* ─────────────────────────────────────────
-   Hero Section
-   ───────────────────────────────────────── */
 .hero {
     position: relative;
     margin: 0;
@@ -165,13 +125,10 @@ footer p {
     transform: translateX(-50%);
     padding: 16px;
     text-align: center;
-    /* CONTRAST FIX 2: was rgba(251,140,0,0.70) = 2.37:1 with white text (fail).
-       Solid #9C4A00 with white = ~6.7:1 (pass). Opacity removed. */
     background-color: var(--accent1-color);
     color: var(--light-text);
 }
 
-/* FIX: Merged duplicate .hero article into one rule */
 .hero article {
     position: absolute;
     bottom: 20px;
@@ -190,9 +147,6 @@ footer p {
     color: var(--dark-text);
 }
 
-/* ─────────────────────────────────────────
-   History Section
-   ───────────────────────────────────────── */
 .history {
     display: grid;
     grid-template-columns: 1fr 200px 1fr;
@@ -212,9 +166,6 @@ footer p {
     width: 100%;
 }
 
-/* ─────────────────────────────────────────
-   Adventures Section
-   ───────────────────────────────────────── */
 .adventures {
     text-align: center;
     padding: 20px;
