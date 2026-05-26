@@ -1,7 +1,7 @@
  :root {
-     --primary-color: #1E88E5;
-     --secondary-color: #00897B;
-     --accent1-color: #FB8C00;
+     --primary-color: #1565C0;
+     --secondary-color: #00796B;
+     --accent1-color: #9C4A00;
      --accent2-color: #E9C46A;
      --heading-font: "Times New Roman", "Georgia", serif;
      --body-font: Arial, Helvetica, sans-serif;
@@ -85,7 +85,7 @@
  }
 
  footer p {
-     color: var(--accent2-color);
+     color: #fff;
  }
 
  .socialmedia a {
@@ -116,7 +116,7 @@
      padding: 16px;
      text-align: center;
 
-     background-color: rgba(251, 140, 0, 0.7);
+     background-color: rgba(156, 74, 0, 0.95);
      color: #fff;
  }
 
