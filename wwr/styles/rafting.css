@@ -60,8 +60,8 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--accent1-color);
-    color: var(--light-text);
+    background-color: var(--accent2-color);
+    color: var(--dark-text);
     border-radius: 5px;
 }
 
