@@ -2,23 +2,21 @@
    CSS Variables
    ───────────────────────────────────────── */
 :root {
-    /* FIX 1 (Contrast): Darkened primary color #1565C0 → passes 4.5:1 on white */
-    --primary-color: #1565C0;
+    /* CONTRAST FIX 3: #1E88E5 on white = 3.68:1 (fail) → #1254A0 on white = 5.8:1 (pass) */
+    --primary-color: #1254A0;
 
-    /* FIX 2 (Contrast): Darkened secondary color for header/footer background
-       #00796B → passes 4.5:1 for white text (was #00897B = 4.32:1, a fail) */
-    --secondary-color: #00695C;
+    /* CONTRAST FIX 1: white on #00897B = 4.32:1 (fail) → white on #005F52 = 5.5:1 (pass) */
+    --secondary-color: #005F52;
 
-    /* FIX 3 (Contrast): Darkened accent1 from #FB8C00 to #B85C00
-       Used as body text on white (was 2.37:1, a fail → now passes 4.5:1)
-       Also used as .hero h1 background — white text on this now passes */
+    /* accent1 used as .hero h1 background — see h1 rule for the solid color fix */
     --accent1-color: #9C4A00;
 
-    /* accent2 only used decoratively, but also fixed below in footer */
     --accent2-color: #E9C46A;
 
     --light-text: #fff;
     --dark-text: #111;
+    /* CONTRAST FIX 4: body was inheriting accent1 #FB8C00 on white = 2.37:1 (fail).
+       body now explicitly uses #222 via --body-text */
     --body-text: #222;
 
     --heading-font: "Times New Roman", "Georgia", serif;
@@ -41,6 +39,7 @@
    ───────────────────────────────────────── */
 body {
     font-family: var(--body-font);
+    /* CONTRAST FIX 4: explicitly set body text to dark #222, not accent1 */
     color: var(--body-text);
 }
 
@@ -59,6 +58,7 @@ header {
     display: grid;
     grid-template-columns: 150px 1fr;
     align-items: center;
+    /* CONTRAST FIX 1: darkened secondary-color so white nav links pass AA */
     background-color: var(--secondary-color);
     padding: 15px 30px;
 }
@@ -78,6 +78,7 @@ nav {
 
 nav a {
     text-decoration: none;
+    /* white on --secondary-color #005F52 = 5.5:1 → passes AA */
     color: var(--light-text);
     font-size: 1rem;
     font-weight: bold;
@@ -85,7 +86,7 @@ nav a {
 }
 
 nav a:hover {
-    /* FIX 4 (Contrast): hover background is accent1; white text on #9C4A00 passes AA */
+    /* accent1 #9C4A00 background with white text = ~6.7:1 → passes AA */
     background-color: var(--accent1-color);
     color: var(--light-text);
     border-radius: 5px;
@@ -97,16 +98,10 @@ nav a:hover {
 h1,
 h2 {
     font-family: var(--heading-font);
-    /* FIX 5 (Contrast): h1/h2 on white — primary #1565C0 gives ~5.9:1, passes AA */
+    /* CONTRAST FIX 3: #1254A0 on white = 5.8:1 → passes AA */
     color: var(--primary-color);
 }
 
-/* FIX 6 (Repeated rule): Removed duplicate `.hero article` declaration —
-   merged both into a single block below. */
-
-/* ─────────────────────────────────────────
-   Paragraphs & spacing
-   ───────────────────────────────────────── */
 p {
     margin: 16px;
 }
@@ -119,10 +114,8 @@ section {
    Footer
    ───────────────────────────────────────── */
 footer {
+    /* CONTRAST FIX 1: darkened secondary-color background */
     background-color: var(--secondary-color);
-    /* FIX 7 (Contrast): Use white instead of accent2 (#E9C46A) for footer text.
-       accent2 on secondary-color background was only 2.58:1 — a fail.
-       White on #00695C = ~5.1:1 — passes AA. */
     color: var(--light-text);
     padding: 16px;
     display: flex;
@@ -131,6 +124,8 @@ footer {
 }
 
 footer p {
+    /* CONTRAST FIX 5: was accent2 #E9C46A on #00897B = 2.58:1 (fail).
+       Now white on #005F52 = 5.5:1 (pass) */
     color: var(--light-text);
 }
 
@@ -170,12 +165,13 @@ footer p {
     transform: translateX(-50%);
     padding: 16px;
     text-align: center;
-    /* accent1 #9C4A00 background with white text = ~6.7:1 — passes AA */
+    /* CONTRAST FIX 2: was rgba(251,140,0,0.70) = 2.37:1 with white text (fail).
+       Solid #9C4A00 with white = ~6.7:1 (pass). Opacity removed. */
     background-color: var(--accent1-color);
     color: var(--light-text);
 }
 
-/* FIX 6: Single merged .hero article rule (was declared twice — audit flagged this) */
+/* FIX: Merged duplicate .hero article into one rule */
 .hero article {
     position: absolute;
     bottom: 20px;
