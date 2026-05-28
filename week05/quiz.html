@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and CSS Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+    <main>
+        <h1>HTML and CSS Quiz</h1>
+
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Question 1</legend>
+                <label for="q1">Fill in the blank: HTML stands for HyperText Markup
+                    ________.</label><br>
+                <input type="text" name="q1" id="q1" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Question 2</legend>
+                <label for="q2">Short answer: Explain what CSS is used for on a webpage.</label><br>
+                <textarea name="q2" id="q2" rows="5" cols="40" required></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Question 3</legend>
+                <label for="q3">Which CSS property changes the text color of an element?</label><br>
+                <select name="q3" id="q3" required>
+                    <option value="" selected disabled>Choose One ...</option>
+                    <option value="color">color</option>
+                    <option value="font-color">font-color</option>
+                    <option value="text-style">text-style</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Question 4</legend>
+                <label for="q4">How many heading levels does HTML provide?</label><br>
+                <input type="number" name="q4" id="q4" min="1" max="10" required>
+            </fieldset>
+
+            <p>
+                <button type="submit">Submit Quiz</button>
+            </p>
+        </form>
+    </main>
+</body>
+
+</html>
